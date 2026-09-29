@@ -67,33 +67,41 @@ A workflow that turns accumulated context into practical deliverables. The produ
 
 The diagram below is intentionally simplified. It communicates the product boundaries without exposing internal services, schemas, prompts or security policies.
 
-```mermaid
-flowchart LR
-    U[User] --> UI[Responsive web experience]
-    UI --> APP[Application and orchestration layer]
-    APP --> AI[LLM and multimodal AI services]
-    APP --> DATA[Authentication, data and private storage]
-    APP --> EXT[Approved external integrations]
-    DATA --> CTX[(User-owned product context)]
-    AI --> OUT[Structures, readings, decisions and creations]
-    CTX --> APP
-    OUT --> UI
+```text
+User
+  │
+  ▼
+Responsive web experience
+  │
+  ▼
+Application & orchestration layer
+  ├── LLM & multimodal AI services
+  ├── Authentication, data & private storage
+  └── Approved external integrations
+  │
+  ▼
+Structures, readings, decisions & creations
 ```
 
 ### General product flow
 
-```mermaid
-flowchart LR
-    A[Conversation and inputs] --> B[Organize context]
-    B --> C[Visualize relationships]
-    C --> D[Develop readings]
-    D --> E[Make and record decisions]
-    E --> F[Create practical outputs]
-    F --> G[Feed the next cycle with context]
+```text
+Conversation & inputs
+        ↓
+Organize context
+        ↓
+Visualize relationships
+        ↓
+Develop readings
+        ↓
+Make & record decisions
+        ↓
+Create practical outputs
+        ↓
+Feed the next cycle with context
 ```
 
 ## Technology stack
-
 | Area | Technologies and practices |
 | --- | --- |
 | Product experience | Responsive web UI, progressive enhancement, PWA foundations |
